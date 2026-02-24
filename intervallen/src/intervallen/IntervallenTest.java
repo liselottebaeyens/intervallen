@@ -10,19 +10,21 @@ import org.junit.jupiter.api.Test;
 class IntervallenTest {
 	
 	class Interval{
+		// REPRESENTATIE = VOORSTELLING
 		int ondergrens;
-		int bovengrens;
+		int lengte;
 	}
+	
 	int getOndergrens(Interval interval) {return interval.ondergrens;}
 	
-	int getBovengrens(Interval interval) {return interval.bovengrens;}
+	int getBovengrens(Interval interval) {return interval.ondergrens+interval.lengte;}
 	
 	void setOndergrens(Interval interval, int ondergrens) {
 		interval.ondergrens=ondergrens;
 		
 	}
 	void setBovengrens(Interval interval, int bovengrens) {
-		interval.bovengrens=bovengrens;
+		interval.lengte = bovengrens-interval.ondergrens;
 	}
 
 	@Test
@@ -30,8 +32,7 @@ class IntervallenTest {
 		Interval myInterval = new Interval();
 		setOndergrens(myInterval,3);
 		setBovengrens(myInterval,7);
-		int lengte = myInterval.bovengrens-myInterval.ondergrens;
+		int lengte = getBovengrens(myInterval)-getOndergrens(myInterval);
 		assertEquals(4,lengte);
 	}
-
 }
