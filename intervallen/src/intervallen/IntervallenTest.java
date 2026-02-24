@@ -11,7 +11,7 @@ class IntervallenTest {
 	
 	@Test
 	void test() {
-		Interval myInterval = new Interval();
+		Interval myInterval = new Interval(3,7);
 		myInterval.setOndergrens(3);
 		myInterval.setBovengrens(7);
 		int lengte = myInterval.getBovengrens()-myInterval.getOndergrens();
