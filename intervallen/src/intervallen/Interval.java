@@ -7,8 +7,8 @@ package intervallen;
  * 
  */
 public class Interval {
-	int ondergrens;
-	int lengte;
+	private int ondergrens;
+	private int lengte;
 	static int getOndergrens(Interval interval) {return interval.ondergrens;}
 	
 	static int getBovengrens(Interval interval) {return interval.ondergrens+interval.lengte;}
