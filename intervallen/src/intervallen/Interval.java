@@ -9,15 +9,20 @@ package intervallen;
 public class Interval {
 	private int ondergrens;
 	private int lengte;
-	static int getOndergrens(Interval interval) {return interval.ondergrens;}
 	
-	static int getBovengrens(Interval interval) {return interval.ondergrens+interval.lengte;}
+	int getOndergrens() 
+	{return this.ondergrens;}
 	
-	static void setOndergrens(Interval interval, int ondergrens) {
-		interval.ondergrens=ondergrens;
+	int getBovengrens() 
+	{return this.ondergrens + this.lengte; }
+	
+	void setOndergrens(int ondergrens) {
+		this.ondergrens=ondergrens;
 		
 	}
-	static void setBovengrens(Interval interval, int bovengrens) {
-		interval.lengte = bovengrens-interval.ondergrens;
+	void setBovengrens(int bovengrens) {
+		this.lengte = bovengrens-this.ondergrens;
 	}
+	
 }
+
